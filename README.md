@@ -59,7 +59,7 @@
 
 <div align="center">
 
-# Гвидо ван Россум
+# Гвидо ван Россум🤓
 
 ![Sliderfy Preview](https://github.com/ShurpoT/python-educate/blob/main/images/Guido_van_Rossum.jpg?raw=true)
 
