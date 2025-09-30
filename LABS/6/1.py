@@ -46,7 +46,7 @@ def write_eng_rus(filename, en_ru):
 
         for en_w in sorted_eng:
             ru_words = sorted(en_ru[en_w])
-            f.write(f"{en_w} - {join.join(ru_words)}\n")
+            f.write(f"{en_w} {separator_1} {join.join(ru_words)}\n")
 
 
 def main():
