@@ -47,8 +47,8 @@ def write_eng_rus(filename, en_ru):
 
 
 def main():
-    input_file = ""  # тут нужно указать пути
-    output_file = ""  # тут нужно указать пути
+    input_file = ""  # путь к index.txt
+    output_file = ""  # путь к output.txt
 
     ru_en = read_ru_en(input_file)
     en_ru = invert_dict(ru_en)
