@@ -6,6 +6,9 @@
 #  На хорошую оценку по работе (8, 9 и 10) слова должны быть подобраны так, как в моём примере, чтобы в результате одно английское слово имело несколько русских значений
 
 encoding = "utf-8"
+separator_1 = "-"
+separator_2 = ","
+join = ", "
 
 
 def read_ru_en(filename):
@@ -14,11 +17,11 @@ def read_ru_en(filename):
         lines = f.readlines()
     for line in lines[1:]:
         line = line.strip()
-        if not line or "-" not in line:
+        if not line or separator_1 not in line:
             continue
-        ru_w, en_part = line.split("-", 1)
+        ru_w, en_part = line.split(separator_1, 1)
         ru_w = ru_w.strip()
-        en_words = [w.strip() for w in en_part.split(",") if w.strip()]
+        en_words = [w.strip() for w in en_part.split(separator_2) if w.strip()]
         if ru_w in ru_en:
             ru_en[ru_w].extend(en_words)
         else:
@@ -43,7 +46,7 @@ def write_eng_rus(filename, en_ru):
 
         for en_w in sorted_eng:
             ru_words = sorted(en_ru[en_w])
-            f.write(f"{en_w} - {', '.join(ru_words)}\n")
+            f.write(f"{en_w} - {join.join(ru_words)}\n")
 
 
 def main():
